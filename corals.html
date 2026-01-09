@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Equipment Log</title>
+    <!-- Viewport meta makes the site scale correctly on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        width: 100%;              /* full width on small screens */
+        max-width: 500px;         /* limit width on larger screens */
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      form {
+        margin-bottom: 30px;
+      }
+      label {
+        display: block;
+        text-align: left;
+        margin: 10px 0 5px;
+        font-weight: bold;
+        color: #555;
+      }
+      input, select, button {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;          /* bigger text for mobile */
+      }
+      button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+
+      /* Optional: tweak spacing on very small screens */
+      @media (max-width: 400px) {
+        .container {
+          padding: 20px;
+        }
+        input, select, button {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Borrow Form -->
+      <h2>Borrow Equipment</h2>
+      <form method="post" action="/borrow">
+        <label for="equipment_id">Select Equipment:</label>
+        <select name="equipment_id" id="equipment_id" required>
+          <option value="">Choose</option>
+          <option value="Laptop-01">Laptop-01</option>
+          <option value="Laptop-02">Laptop-02</option>
+          <option value="Crimper-01">Crimper-01</option>
+          <option value="Cable-UTP-17">Cable-UTP-17</option>
+          <option value="Tester-03">Tester-03</option>
+        </select>
+
+        <label for="student_name">Full Name:</label>
+        <input type="text" name="student_name" id="student_name" placeholder="Enter full name" required>
+
+        <label for="year_level">Year Level:</label>
+        <select name="year_level" id="year_level" required>
+          <option value="">Choose</option>
+          <option value="Grade 11">Grade 11</option>
+          <option value="Grade 12">Grade 12</option>
+        </select>
+
+        <label for="sex">Sex:</label>
+        <select name="sex" id="sex" required>
+          <option value="">Choose</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label for="section">Section:</label>
+        <input type="text" name="section" id="section" placeholder="Enter section" required>
+
+        <button type="submit">Borrow</button>
+      </form>
+
+      <!-- Return Form -->
+      <h2>Return Equipment</h2>
+      <form method="post" action="/return">
+        <label for="equipment_id">Select Equipment:</label>
+        <select name="equipment_id" id="equipment_id" required>
+          <option value="">Choose</option>
+          <option value="Laptop-01">Laptop-01</option>
+          <option value="Laptop-02">Laptop-02</option>
+          <option value="Crimper-01">Crimper-01</option>
+          <option value="Cable-UTP-17">Cable-UTP-17</option>
+          <option value="Tester-03">Tester-03</option>
+        </select>
+
+        <label for="student_name">Full Name:</label>
+        <input type="text" name="student_name" id="student_name" placeholder="Enter full name" required>
+
+        <label for="year_level">Year Level:</label>
+        <select name="year_level" id="year_level" required>
+          <option value="">Choose</option>
+          <option value="Grade 11">Grade 11</option>
+          <option value="Grade 12">Grade 12</option>
+        </select>
+
+        <label for="sex">Sex:</label>
+        <select name="sex" id="sex" required>
+          <option value="">Choose</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label for="section">Section:</label>
+        <input type="text" name="section" id="section" placeholder="Enter section" required>
+
+        <button type="submit">Return</button>
+      </form>
+    </div>
+  </body>
+</html>
